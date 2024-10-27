@@ -19,14 +19,6 @@ const ApartmentCard = ({ apartment }: { apartment: Apartment }) => {
     width={2250}
     height={1390}
 />
-{/* <img
-    alt={apartment.name}
-    src={apartment.imageUrl || "https://lirp.cdn-website.com/faf75e4c/dms3rep/multi/opt/6506_Halls_Farm_Lane_003-640w.jpg"}
-    width={2250}
-    height={1390}
-/> */}
-
-      {/* <img src={apartment.imageUrl || "/placeholder.jpg"} alt={apartment.name} /> */}
       <h3>{apartment.name}</h3>
       <Link href={`/apartments/${apartment._id}`}>
         <button className="details-button">View Details</button>
