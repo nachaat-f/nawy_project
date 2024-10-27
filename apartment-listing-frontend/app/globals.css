@@ -1,4 +1,4 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -18,58 +18,8 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.title {
-  font-size: 2rem;
-  text-align: center;
-  margin: 20px 0;
-  color: #333;
-}
-
-.search-filter {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.search-filter input {
-  padding: 8px;
-  font-size: 1rem;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-
- */
-
- @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
 .title {
@@ -85,30 +35,34 @@ body {
   align-items: center; /* Center vertically */
   gap: 10px;
   margin-bottom: 20px;
+  padding-left: 20px; /* Add left padding */
 }
 
-.search-filter input, select,.add-button1 {
+
+.search-filter input, select, .add-button1 {
   padding: 8px;
   font-size: 1rem;
   border-radius: 4px;
   border: 1px solid #ddd;
+  flex: 1; /* Allow input and select to grow */
+  min-width: 150px; /* Minimum width for inputs */
 }
 
-
 .add-button1 {
-  background-color: #007bff; /* Button background color */
-  color: white; /* Button text color */
-  cursor: pointer; /* Change cursor on hover */
+  background-color: #007bff;
+  color: white; 
+  cursor: pointer; 
 }
 
 .add-button1:hover {
-  background-color: #0056b3; /* Darker blue for hover effect */
+  background-color: #0056b3; 
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
+  padding: 0 10px; /* Add some padding for smaller screens */
 }
 
 .modal {
@@ -127,145 +81,76 @@ body {
   background: white;
   padding: 20px;
   border-radius: 5px;
-}
-
-.add-button1 {
-  margin: 10px 0;
-}
-
-
-.modal-wrapper {
-  width: 500px;
-  height: 600px;
-}
-
-/* .modal {
-  background: white;
-  height:100%;
-  width:100%;
-  border-radius: 15px;
-  padding: 15px;
-} */
-/*
-.modal-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-body {
-  padding-top: 10px;
-}
-
-.modal-header {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 25px;
-}
-
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgb(90, 88, 88);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-*/
-
-/* .apartment-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-} */
-
-/* .apartment-card {
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  text-align: center;
-} */
-
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; /* Ensure the modal is on top */
-}
-
-.modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 350px; /* Reduced width for smaller modal */
-  height: 450px; /* Adjusted height to fit new fields */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Space out header, body, and footer */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%; /* Responsive width */
+  max-width: 500px; /* Limit maximum width */
 }
 
 .modal-header {
   font-weight: bold;
-  text-align: center; /* Center the header text */
-  margin-bottom: 15px; /* Reduced margin */
+  text-align: center; 
+  margin-bottom: 15px; 
 }
 
 .modal-body {
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Allow body to grow and fill space */
+  flex-grow: 1; 
 }
 
-.modal-body input, .modal-body select { /* Style for inputs and dropdown */
-  margin-bottom: 10px; /* Reduced margin for inputs */
+.modal-body input, .modal-body select {
+  margin-bottom: 10px; 
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-input[type="file"] {
-  border: 1px solid #ccc; /* Maintain border for file input */
-  padding: 10px;
   border-radius: 4px;
 }
 
 .modal-footer {
   display: flex;
-  justify-content: space-between; /* Space buttons evenly */
+  justify-content: space-between; 
 }
 
 .add-button, .close-button {
-  padding: 10px 8px; /* Reduced padding for buttons */
+  padding: 10px 8px; 
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 48%; /* Set buttons to take equal space */
-  font-size: 14px; /* Adjust font size for buttons */
+  width: 48%; 
+  font-size: 14px; 
 }
 
 .add-button {
-  background-color: #28a745; /* Green color */
+  background-color: #28a745; 
   color: white;
 }
 
 .close-button {
-  background-color: #dc3545; /* Red color */
+  background-color: #dc3545; 
   color: white;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem; /* Smaller title font on mobile */
+  }
+  
+  .search-filter {
+    flex-direction: column; /* Stack inputs vertically */
+  }
+  .search-filter {
+    padding-left: 10px; /* Less padding on mobile screens */
+  }
+  
+  .search-filter input, select, .add-button1 {
+    width: 100%; /* Full width on mobile */
+  }
+}
+
+
+
+
+
+
+
+
+
