@@ -29,7 +29,7 @@ const Home = () => {
   const fetchApartments = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/apartments', {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/apartments`, {
         params: { name: search, unitNumber, project,  minPrice, maxPrice} // Include price range in the request
       });
       console.log("hena");
@@ -51,7 +51,7 @@ const Home = () => {
     e.preventDefault(); // Prevent default form submission
 
     try {
-      const response = await axios.post('http://localhost:5000/api/apartments', newApartment);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/apartments`, newApartment);
       setApartments([...apartments, response.data]); // Update apartment list
       setNewApartment({ name: '', unitNumber: '', project: '', details: '', price: '', imageUrl: '' }); // Reset form
       setModalOpen(false); // Close modal

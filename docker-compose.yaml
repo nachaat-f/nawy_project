@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  frontend: 
+    image: nawy-frontend
+    environment:
+      NEXT_PUBLIC_BACKEND_URL: http://localhost:5000
+    ports:
+      - "3000:3000"
+    command: ["npm", "run", "dev"]
+    depends_on:
+      - backend
+
+  backend:
+    image: nawy-backend
+    environment:
+      - MONGODB_URI=mongodb+srv://superuser:superuser@cluster0.3mwqi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    ports:
+      - "5000:5000"
+    command: ["npm", "start"]
+    # depends_on: 
+    #   - mongo
+
+
+  # mongo:
+  #     image: mongo:latest
+  #     container_name: mongodb_container
+  #     environment:
+  #       MONGO_INITDB_ROOT_USERNAME: root
+  #       MONGO_INITDB_ROOT_PASSWORD: root
+  #     ports:
+  #       - "27019:27017"
+  #     volumes:
+  #       - ./mongo_data:/data/db
+
+
+# volumes:
+#     mongo_data:
+#       driver: local

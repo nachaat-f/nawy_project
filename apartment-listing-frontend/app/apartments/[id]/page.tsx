@@ -16,7 +16,7 @@ const ApartmentDetails = ({ params: paramsPromise }: { params: Promise<{ id: str
   useEffect(() => {
     const fetchApartment = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/apartments/${id}`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/apartments/${id}`);
         setApartment(response.data);
         setLoading(false);
       } catch (error) {
