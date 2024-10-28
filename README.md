@@ -1,11 +1,11 @@
-Overview :
+##Overview :
 This project is an application built with Node.js and MongoDB Nextjs that is responsible for managing apartments.
 
-**Steps to run local backend & frontend 
-#backend 
-cd backend
-npm start
-#frontend
+##Steps to run local backend & frontend 
+*backend 
+1-cd backend
+2-npm start
+*frontend
 1-cd apartment-listing-frontend
 2-npm run dev 
 3-change this in page.tsx example:
@@ -14,7 +14,7 @@ await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/apartments`, {
 
 **Otherwise 
 you have a dockerfile in the frontend and one in the backend 
-and one that it is docker-compose.yaml 
+and one that it is docker-compose.yaml on the whole project 
 
 
 
